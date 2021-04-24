@@ -11,7 +11,7 @@ class ImgixBorder {
 
   ImgixBorder({required this.color, required this.width});
 
-  ImgixBorder copyWith(String color, int width) => ImgixBorder(
+  ImgixBorder copyWith(String? color, int? width) => ImgixBorder(
         color: color ?? this.color,
         width: width ?? this.width,
       );
@@ -48,10 +48,10 @@ class ImgixBorderRadius {
   }
 
   ImgixBorderRadius copyWith(
-    int topLeft,
-    int topRight,
-    int bottomLeft,
-    int bottomRight,
+    int? topLeft,
+    int? topRight,
+    int? bottomLeft,
+    int? bottomRight,
   ) =>
       ImgixBorderRadius(
         topLeft: topLeft ?? this.topLeft,
@@ -60,8 +60,7 @@ class ImgixBorderRadius {
         bottomRight: bottomRight ?? this.bottomRight,
       );
 
-  bool get isCircular =>
-      topLeft == topRight && topLeft == bottomLeft && topLeft == bottomRight;
+  bool get isCircular => topLeft == topRight && topLeft == bottomLeft && topLeft == bottomRight;
 
   @override
   String toString() {
@@ -106,8 +105,7 @@ final ApplyParams applyBorderRadiusInner = (queryParameters, options) {
   assert(options.border != null, "Border must be set to use borderRadiusInner");
 
   if (options.borderRadiusInner!.isCircular) {
-    queryParameters["border-radius-inner"] =
-        options.borderRadiusInner!.topLeft.toString();
+    queryParameters["border-radius-inner"] = options.borderRadiusInner!.topLeft.toString();
   } else {
     queryParameters["border-radius-inner"] =
         "${options.borderRadiusInner!.topLeft},${options.borderRadiusInner!.topRight},${options.borderRadiusInner!.bottomRight},${options.borderRadiusInner!.bottomLeft}";
