@@ -11,7 +11,7 @@ final ApplyParams applyBackgroundColor = (queryParameters, options) {
     return;
   }
 
-  assertColor(options.backgroundColor, "Background color");
+  assertColor(options.backgroundColor!, "Background color");
 
   queryParameters["bg"] = options.backgroundColor;
 };
@@ -21,7 +21,7 @@ final ApplyParams applyFillColor = (queryParameters, options) {
     return;
   }
 
-  assertColor(options.fillColor, "Fill color");
+  assertColor(options.fillColor!, "Fill color");
 
   queryParameters["fill-color"] = options.fillColor;
 };

@@ -12,7 +12,7 @@ final ApplyParams applyRotation = (queryParameters, options) {
     return;
   }
 
-  assert(options.rotation >= 0 && options.rotation < 360,
+  assert(options.rotation! >= 0 && options.rotation! < 360,
       "Rotation must be between [0, 360)");
 
   queryParameters["rot"] = trimDouble(options.rotation);

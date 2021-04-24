@@ -27,7 +27,7 @@ final ApplyParams applyTrimTolerance = (queryParameters, options) {
   }
 
   assert(
-      options.trimTolerance >= 0, "Trim tolerance must be over or equal to 0");
+      options.trimTolerance! >= 0, "Trim tolerance must be over or equal to 0");
 
   queryParameters["trimtol"] = trimDouble(options.trimTolerance);
 };

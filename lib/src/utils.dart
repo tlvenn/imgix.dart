@@ -1,7 +1,7 @@
 import 'package:imgix/imgix.dart';
 
 /// Removes ".0" from doubles
-String trimDouble(double value) {
+String trimDouble(double? value) {
   final stringValue = value.toString();
 
   if (stringValue.endsWith(".0")) {
@@ -12,7 +12,7 @@ String trimDouble(double value) {
 }
 
 typedef void ApplyParams(
-  Map<String, String> queryParameters,
+  Map<String, String?> queryParameters,
   ImgixOptions options,
 );
 

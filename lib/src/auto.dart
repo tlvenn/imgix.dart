@@ -13,18 +13,18 @@ final ApplyParams applyAuto = (queryParameters, options) {
     return;
   }
 
-  final auto = List<String>();
+  final auto = <String>[];
 
-  if (options.auto.contains(ImgixAuto.compress)) {
+  if (options.auto!.contains(ImgixAuto.compress)) {
     auto.add("compress");
   }
-  if (options.auto.contains(ImgixAuto.enhance)) {
+  if (options.auto!.contains(ImgixAuto.enhance)) {
     auto.add("enhance");
   }
-  if (options.auto.contains(ImgixAuto.format)) {
+  if (options.auto!.contains(ImgixAuto.format)) {
     auto.add("format");
   }
-  if (options.auto.contains(ImgixAuto.redeye)) {
+  if (options.auto!.contains(ImgixAuto.redeye)) {
     auto.add("redeye");
   }
 

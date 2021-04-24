@@ -1,3 +1,7 @@
+## [0.3.0] - 2021-4-24
+
+- Migration to null-safety
+
 ## [0.2.0] - 2018-12-13
 
 - Decouple code into multiple files and improve docs

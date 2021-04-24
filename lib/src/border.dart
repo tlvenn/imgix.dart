@@ -9,7 +9,7 @@ class ImgixBorder {
   /// Width in pixel
   final int width;
 
-  ImgixBorder({@required this.color, @required this.width});
+  ImgixBorder({required this.color, required this.width});
 
   ImgixBorder copyWith(String color, int width) => ImgixBorder(
         color: color ?? this.color,
@@ -31,10 +31,10 @@ class ImgixBorderRadius {
   final int bottomRight;
 
   ImgixBorderRadius({
-    @required this.topLeft,
-    @required this.topRight,
-    @required this.bottomLeft,
-    @required this.bottomRight,
+    required this.topLeft,
+    required this.topRight,
+    required this.bottomLeft,
+    required this.bottomRight,
   });
 
   /// ImgixBorderRadius with all sides the same width
@@ -78,9 +78,9 @@ final ApplyParams applyBorder = (queryParameters, options) {
     return;
   }
 
-  assertColor(options.border.color, "Border color");
+  assertColor(options.border!.color, "Border color");
 
-  queryParameters["border"] = "${options.border.width},${options.border.color}";
+  queryParameters["border"] = "${options.border!.width},${options.border!.color}";
 };
 
 final ApplyParams applyBorderRadius = (queryParameters, options) {
@@ -90,11 +90,11 @@ final ApplyParams applyBorderRadius = (queryParameters, options) {
 
   assert(options.border != null, "Border must be set to use borderRadius");
 
-  if (options.borderRadius.isCircular) {
-    queryParameters["border-radius"] = options.borderRadius.topLeft.toString();
+  if (options.borderRadius!.isCircular) {
+    queryParameters["border-radius"] = options.borderRadius!.topLeft.toString();
   } else {
     queryParameters["border-radius"] =
-        "${options.borderRadius.topLeft},${options.borderRadius.topRight},${options.borderRadius.bottomRight},${options.borderRadius.bottomLeft}";
+        "${options.borderRadius!.topLeft},${options.borderRadius!.topRight},${options.borderRadius!.bottomRight},${options.borderRadius!.bottomLeft}";
   }
 };
 
@@ -105,12 +105,12 @@ final ApplyParams applyBorderRadiusInner = (queryParameters, options) {
 
   assert(options.border != null, "Border must be set to use borderRadiusInner");
 
-  if (options.borderRadiusInner.isCircular) {
+  if (options.borderRadiusInner!.isCircular) {
     queryParameters["border-radius-inner"] =
-        options.borderRadiusInner.topLeft.toString();
+        options.borderRadiusInner!.topLeft.toString();
   } else {
     queryParameters["border-radius-inner"] =
-        "${options.borderRadiusInner.topLeft},${options.borderRadiusInner.topRight},${options.borderRadiusInner.bottomRight},${options.borderRadiusInner.bottomLeft}";
+        "${options.borderRadiusInner!.topLeft},${options.borderRadiusInner!.topRight},${options.borderRadiusInner!.bottomRight},${options.borderRadiusInner!.bottomLeft}";
   }
 };
 
