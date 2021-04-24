@@ -18,7 +18,7 @@ final ApplyParams applyFit = (queryParameters, options) {
     return;
   }
 
-  switch (options.fit) {
+  switch (options.fit!) {
     case ImgixFit.clamp:
       queryParameters["fit"] = "clamp";
       break;
@@ -124,10 +124,8 @@ final ApplyParams applyDevicePixelRatio = (queryParameters, options) {
   }
 
   assert(options.devicePixelRatio! > 0, "Device pixel ratio must be over zero");
-  assert(options.devicePixelRatio! <= 8,
-      "Device pixel ratio must under or equal to 8");
-  assert(options.height != null || options.width != null,
-      "Device pixel ratio requires a height or width (or both)");
+  assert(options.devicePixelRatio! <= 8, "Device pixel ratio must under or equal to 8");
+  assert(options.height != null || options.width != null, "Device pixel ratio requires a height or width (or both)");
 
   queryParameters["dpr"] = trimDouble(options.devicePixelRatio);
 };

@@ -11,7 +11,7 @@ final ApplyParams applyTrim = (queryParameters, options) {
     return;
   }
 
-  switch (options.trim) {
+  switch (options.trim!) {
     case ImgixTrim.auto:
       queryParameters["trim"] = "auto";
       break;
@@ -26,8 +26,7 @@ final ApplyParams applyTrimTolerance = (queryParameters, options) {
     return;
   }
 
-  assert(
-      options.trimTolerance! >= 0, "Trim tolerance must be over or equal to 0");
+  assert(options.trimTolerance! >= 0, "Trim tolerance must be over or equal to 0");
 
   queryParameters["trimtol"] = trimDouble(options.trimTolerance);
 };

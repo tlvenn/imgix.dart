@@ -12,8 +12,7 @@ final ApplyParams applyRotation = (queryParameters, options) {
     return;
   }
 
-  assert(options.rotation! >= 0 && options.rotation! < 360,
-      "Rotation must be between [0, 360)");
+  assert(options.rotation! >= 0 && options.rotation! < 360, "Rotation must be between [0, 360)");
 
   queryParameters["rot"] = trimDouble(options.rotation);
 };
@@ -23,7 +22,7 @@ final ApplyParams applyFlip = (queryParameters, options) {
     return;
   }
 
-  switch (options.flip) {
+  switch (options.flip!) {
     case ImgixFlip.horizontal:
       queryParameters["flip"] = "h";
       break;

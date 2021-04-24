@@ -21,7 +21,7 @@ final ApplyParams applyFormat = (queryParameters, options) {
     return;
   }
 
-  switch (options.format) {
+  switch (options.format!) {
     case ImgixFormat.gif:
       queryParameters["fm"] = "gif";
       break;

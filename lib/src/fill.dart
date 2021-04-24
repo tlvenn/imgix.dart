@@ -31,7 +31,7 @@ final ApplyParams applyFillMode = (queryParameters, options) {
     return;
   }
 
-  switch (options.fillMode) {
+  switch (options.fillMode!) {
     case ImgixFillMode.blur:
       queryParameters["fill"] = "blur";
       break;
