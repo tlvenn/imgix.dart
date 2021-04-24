@@ -268,26 +268,17 @@ class ImgixOptions {
         fit: !noFit ? fit ?? this.fit : null,
         auto: !noAuto ? auto ?? this.auto : null,
         trim: !noTrim ? trim ?? this.trim : null,
-        trimTolerance:
-            !noTrimTolerance ? trimTolerance ?? this.trimTolerance : null,
+        trimTolerance: !noTrimTolerance ? trimTolerance ?? this.trimTolerance : null,
         quality: !noQuality ? quality ?? this.quality : null,
-        devicePixelRatio: !noDevicePixelRatio
-            ? devicePixelRatio ?? this.devicePixelRatio
-            : null,
+        devicePixelRatio: !noDevicePixelRatio ? devicePixelRatio ?? this.devicePixelRatio : null,
         border: !noBorder ? border ?? this.border : null,
-        borderRadius:
-            !noBorderRadius ? borderRadius ?? this.borderRadius : null,
-        borderRadiusInner: !noBorderRadiusInner
-            ? borderRadiusInner ?? this.borderRadiusInner
-            : null,
+        borderRadius: !noBorderRadius ? borderRadius ?? this.borderRadius : null,
+        borderRadiusInner: !noBorderRadiusInner ? borderRadiusInner ?? this.borderRadiusInner : null,
         padding: !noPadding ? padding ?? this.padding : null,
-        backgroundColor:
-            !noBackgroundColor ? backgroundColor ?? this.backgroundColor : null,
+        backgroundColor: !noBackgroundColor ? backgroundColor ?? this.backgroundColor : null,
         fillColor: !noFillColor ? fillColor ?? this.fillColor : null,
         fillMode: !noFillMode ? fillMode ?? this.fillMode : null,
-        downloadFileName: !noDownloadFileName
-            ? downloadFileName ?? this.downloadFileName
-            : null,
+        downloadFileName: !noDownloadFileName ? downloadFileName ?? this.downloadFileName : null,
         rotation: !noRotation ? rotation ?? this.rotation : null,
         flip: !noFlip ? flip ?? this.flip : null,
         brightness: !noBrightness ? brightness ?? this.brightness : null,
@@ -297,8 +288,7 @@ class ImgixOptions {
 /// Generates an Imgix URL from a [url] and [options].
 ///
 /// [clearQueryParameters] will clear all other query parameters on the URL.
-String getImgixUrl(String url, ImgixOptions options,
-    {bool clearQueryParameters = false}) {
+String getImgixUrl(String url, ImgixOptions? options, {bool clearQueryParameters = false}) {
   // No options is a pass-through
   if (options == null) {
     return url;
